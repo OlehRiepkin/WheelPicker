@@ -141,6 +141,9 @@ public abstract class WheelCrossPicker extends AbstractWheelPicker
         int curIndex = itemIndex - unitDeltaTotal / unit;
         curIndex = Math.max(0, curIndex);
         curIndex = Math.min(data.size() - 1, curIndex);
+        if (curIndex < 0) {
+            curIndex = 0
+        }
         String curData = data.get(curIndex);
         if (!this.curData.equals(curData)) {
             this.curData = curData;
